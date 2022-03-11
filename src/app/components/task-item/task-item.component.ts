@@ -8,6 +8,7 @@ import { Task } from '../../Task';
 export class TaskItemComponent implements OnInit {
   @Output() removeTask: EventEmitter<number> = new EventEmitter();
   @Input() task!: Task;
+  @Output() toggleTaskDone: EventEmitter<Task> = new EventEmitter();
   // svgColor: string = this.task.done ? 'red' : 'lightgray';
   // disableButton!: boolean;
   constructor() {
@@ -17,7 +18,7 @@ export class TaskItemComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-  remove(task: Task) {
+  remove(task: Task): void {
     task.done && this.removeTask.emit(task.id);
   }
   svgColor(done: boolean): string {
@@ -25,6 +26,6 @@ export class TaskItemComponent implements OnInit {
   }
 
   toggleDone(): void {
-    this.task.done = !this.task.done;
+    this.toggleTaskDone.emit(this.task);
   }
 }

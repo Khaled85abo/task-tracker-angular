@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {} from 'rxjs';
 import { Task } from '../../Task';
 import { TaskService } from 'src/app/services/task.service';
+import { GetAllTasksService } from 'src/app/services/get-all-tasks.service';
+import { ToggleTaskService } from '../../services/toggleTask/toggle-task.service';
 @Component({
   selector: 'app-tasks',
   templateUrl: './tasks.component.html',
@@ -12,13 +13,35 @@ export class TasksComponent implements OnInit {
 
   // array: (number | string| boolean)[] = [1, 2, 3, 4, 5, 6, 'hej', true]
 
-  constructor(private taskService: TaskService) {}
+  constructor(
+    private taskService: TaskService,
+    private getAllTasksService: GetAllTasksService,
+    private toggleTaskService: ToggleTaskService
+  ) {}
 
   ngOnInit(): void {
-    this.taskService.getTasks().subscribe((tasks) => (this.tasks = tasks));
+    this.getAllTasksService
+      .getAllTasks()
+      .subscribe((tasks) => (this.tasks = tasks));
   }
 
   remove(id: number) {
-    console.log(id);
+    this.taskService
+      .deleteTask(id)
+      .subscribe(
+        () => (this.tasks = this.tasks.filter((task) => task.id !== id))
+      );
+  }
+
+  toggleDone(task: Task) {
+    this.toggleTaskService
+      .updateDone({ ...task, done: !task.done })
+      .subscribe(() => (task.done = !task.done));
+  }
+
+  addNewTask(task: Task) {
+    this.taskService
+      .addTask(task)
+      .subscribe((task) => (this.tasks = [...this.tasks, task]));
   }
 }

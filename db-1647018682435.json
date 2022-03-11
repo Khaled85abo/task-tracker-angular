@@ -19,21 +19,7 @@
       "text": "Meeting with Mom",
       "day": "Every Sunday",
       "reminder": false,
-      "done": true
-    },
-    {
-      "text": "test task",
-      "day": "Friday",
-      "reminder": false,
-      "done": true,
-      "id": 4
-    },
-    {
-      "text": "another task",
-      "day": "Mondah",
-      "reminder": false,
-      "done": true,
-      "id": 5
+      "done": false
     }
   ]
 }
