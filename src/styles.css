@@ -1,1 +1,190 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap");
+/* How to use varibales with min to achieve margin and padding and max-width */
+/* https://twitter.com/KevinJPowell/status/1501555193799925761 */
+/* :root{
+    --padding: 1rem;
+    --max-width: 400px;
+}
+.container{
+    width: min(100% - var(--padding), var(--max-width));
+}
+
+.container--narrow{
+    --max-width: 55rem;
+}
+.container--wide {
+--max-width: 90rem;
+}
+.container--no-padding{
+--padding: 0
+} */
+
+:root {
+  --date-text: gray;
+  --inactive-svg: lightgray;
+  --reminder: green;
+  --bin: red;
+  --soft-rose: #f0bfcc;
+  --soft-yellow: #f9d885;
+  --mint-green: #61d7ad;
+  --blue-lilly: #6872a5;
+  --btn-blue: #4e7294;
+  --forgot-password: #58738b;
+  --input-active: #4b89c2;
+  --not-marked: #8d8d8d;
+  --hover: #184b7a;
+  --inactive: #d9d9d9;
+  --text-black: #000000;
+  --text-white: #ffffff;
+  --bg-black-50: rgba(0, 0, 0, 0.5);
+  --bg-black-80: rgba(0, 0, 0, 0.8);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+.desktop-title {
+  font-weight: 500;
+  font-size: 48px;
+}
+.desktop-subtitle {
+  font-weight: 500;
+  font-size: 36px;
+}
+.desktop-btn {
+  font-weight: 700;
+  font-size: 30px;
+}
+.desktop-input {
+  font-weight: 400;
+  font-size: 28px;
+}
+.desktop-forgot-password {
+  font-weight: 600;
+  font-size: 25px;
+}
+.desktop-info-login {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.mobile-title1 {
+  font-weight: 500;
+  font-size: 30px;
+}
+.mobile-title2 {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+.mobile-title3 {
+  font-weight: 500;
+  font-size: 24px;
+}
+.mobile-btn-text {
+  font-weight: 700;
+  font-size: 25px;
+}
+.mobile-info-title {
+  font-weight: 500;
+  font-size: 22px;
+}
+.mobile-btn-title2 {
+  font-weight: 700;
+  font-size: 22px;
+}
+.mobile-add-profile-image {
+  font-weight: 600;
+  font-size: 20px;
+}
+.mobile-create-profile-text {
+  font-weight: 500;
+  font-size: 20px;
+}
+.mobile-add-pet {
+  font-weight: 400;
+  font-size: 20px;
+}
+.mobile-subtitle {
+  font-weight: 500;
+  font-size: 18px;
+}
+.mobile-info-text {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.container {
+  /* width: min(100% - 30px, 500px);
+  margin-inline: auto; */
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 30px;
+  overflow: auto;
+  min-height: 300px;
+  border-radius: 5px;
+  border: 1px solid steelblue;
+}
+.btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+.btn:focus {
+  outline: none;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.form-control {
+  margin: 20px 0;
+}
+
+.form-control label {
+  display: block;
+}
+
+.form-control input {
+  width: 100%;
+  height: 40px;
+  margin: 5px;
+  padding: 3px 7px;
+  font-size: 17px;
+}
+
+.form-control-check {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-control-check label {
+  flex: 1;
+}
+
+.form-control-check input {
+  flex: 2;
+  height: 20px;
+}
