@@ -20,13 +20,6 @@
       "day": "Every Sunday",
       "reminder": false,
       "done": false
-    },
-    {
-      "text": "test task",
-      "day": "Friday",
-      "reminder": false,
-      "done": false,
-      "id": 4
     }
   ]
 }

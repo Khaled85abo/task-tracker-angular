@@ -1,0 +1,4 @@
+button {
+  transition: background-color ease 0.5s;
+  min-width: 100px;
+}

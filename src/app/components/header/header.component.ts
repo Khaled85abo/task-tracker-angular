@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-header',
@@ -6,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  @Output() toggleForm: EventEmitter<boolean> = new EventEmitter();
   title: string = 'Task tracker';
-  constructor() {}
+  showForm: boolean = true;
+  subscription!: Subscription;
+  constructor(private uiService: UiService) {}
 
   // Life cycle methods onLoad
   ngOnInit(): void {}
   toggleAddTask() {
-    console.log('toggle');
+    this.uiService.toggleShowForm();
   }
 }
